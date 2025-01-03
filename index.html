@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="atm-container">
+        <h1>Shan ATM</h1>
+
+        <!-- Card Verification Section -->
+        <div id="card-verification">
+            <h2>Card Verification</h2>
+            <input type="text" id="card-number" placeholder="Enter Card Number" maxlength="16">
+            <input type="password" id="pin" placeholder="Enter PIN" maxlength="4">
+            <button onclick="verifyCard()">Verify</button>
+            <p id="verification-error" style="color: red; display: none;">Invalid card number or PIN. Please try again.</p>
+        </div>
+
+        <!-- ATM System Section (Hidden Initially) -->
+        <div id="atm-section" style="display: none;">
+            <div id="balance-section">
+                <button onclick="balanceEnquiry()">Balance Enquiry</button>
+                <p id="balance-display">Current Balance: Rs.1000</p>
+            </div>
+
+            <div id="withdraw-section">
+                <button onclick="showWithdraw()">Withdraw</button>
+                <div id="withdraw-form" style="display: none;">
+                    <input type="number" id="withdraw-amount" placeholder="Enter amount">
+                    <button onclick="withdraw()">Submit</button>
+                </div>
+            </div>
+
+            <div id="deposit-section">
+                <button onclick="showDeposit()">Deposit</button>
+                <div id="deposit-form" style="display: none;">
+                    <input type="number" id="deposit-amount" placeholder="Enter amount">
+                    <button onclick="deposit()">Submit</button>
+                </div>
+            </div>
+
+            <div id="upi-section">
+                <button onclick="showUPIWithdraw()">UPI Withdraw</button>
+                <div id="upi-form" style="display: none;">
+                    <input type="text" id="upi-id" placeholder="Enter UPI ID">
+                    <input type="number" id="upi-amount" placeholder="Enter amount">
+                    <button onclick="upiWithdraw()">Submit</button>
+                </div>
+            </div>
+
+            <div id="pin-section">
+                <button onclick="generatePin()">Generate PIN</button>
+                <p id="generated-pin"></p>
+            </div>
+
+            <div id="cardless-transfer-section">
+                <button onclick="showCardlessTransfer()">Cardless Transfer</button>
+                <div id="cardless-form" style="display: none;">
+                    <input type="text" id="cardless-phone" placeholder="Enter phone number">
+                    <input type="number" id="transfer-amount" placeholder="Enter amount">
+                    <button onclick="cardlessTransfer()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
